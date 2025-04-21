@@ -115,6 +115,52 @@ Para el manejo correcto de los datos en sql en la inserción de un nuevo dato, u
 
 ### Plantilla:
 
+```sql
+namespace GestionCursosAPI.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class EstudiantesController : ControllerBase {
+        private readonly IConfiguration _configuration;
+
+        public EstudiantesController(IConfiguration configuration) {
+            _configuration = configuration;
+        }
+}
+```
+- IConfiguration: se usa para la cadena de conexión en el json.
+
+## 🌐 Métodos HTTP que maneja un controlador:
+### GET :
+Sirve para consultar o recuperar información.
+### POST:
+Se usa para crear nuevos recursos.
+### PUT:
+Sirve para actualizar completamente un recurso existente.
+### DELETE: 
+Se utiliza para eliminar un recurso existente.
+
+## 📝	Models API
+En la carpeta se define las propiedades de cada sección de nuestro gestor académico.
+
+### Plantilla:
+```sql
+public class NombreDeLaClase {
+    public int Id { get; set; }
+    public string Nombre { get; set; } 
+    public string Apellido { get; set; }  ….
+}
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
