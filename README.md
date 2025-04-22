@@ -152,8 +152,6 @@ public class NombreDeLaClase {
 }
 ```
 ---
-## Gestor Web Index
-
 ## 🎨Diseño General (HTML Y CSS)
 
 -	El HTML crea la estructura visual: títulos, menús, formularios, tablas, etc.
