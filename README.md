@@ -247,7 +247,52 @@ fetch(`https://localhost:7198/api/Nombre_Formulario1/Nombre_Formulario2/${Id_For
 📌 NOTA:  Asegúrate de que el campo item.nombre y item.id coincidan con la estructura real del JSON que devuelve tu API.
 
 ---
+## 📋 Módulo de Gestion de Cursos
 
+En este apartado nos permitira al usuario gestionar cursos academicoa a través de una interfaz dinamica que se comunica con una API REST.
+
+### Funcionalidades
+
+- ✅ Crear nuevos cursos mediante un formulario.
+- 📋 Mostrar todos los cursos en una tabla.
+- ✏️ Editar cursos directamente en la tabla.
+- ❌ Eliminar cursos con confirmación.
+
+### 🛠️ Descripcion Técnica
+
+- Se utiliza `fetch()` para realizar peticiones `POST`, `GET`, `PUT` y `DELETE` hacia `/api/cursos`.
+- La tabla se actualiza automáticamente tras cada operación gracias a la función `cargarCursos()`.
+- Al editar un curso, se intercambian dinámicamente elementos `span` e `input` para facilitar la edición en línea.
+- Mensajes visuales indican el éxito o error de las operaciones.
+
+## 📋 Módulo de Gestion de Estudiantes
+
+Nos permite listar, editar, eliminar y filtrar estudiantes desde una interfaz web, comunicándose con una API REST.
+
+- 📋 Listar estudiantes en una tabla dinámica con sus datos personales y la carrera asociada.
+- ✏️ Editar estudiantes en línea, incluyendo datos como:
+  - Nombre y apellido
+  - Fecha de nacimiento
+  - Email, dirección y teléfono
+  - Carrera asociada
+- ✏️ Editar estudiantes, ya sea desde la tabla (modo en línea) o cargando los datos en el formulario para modificarlos.
+- ❌ Eliminar estudiantes con confirmación.
+- 🔍 Filtrar estudiantes por carrera usando un selector desplegable
+- 🔄 Actualización automática de la tabla tras cada operación.
+  
+### 🛠️ Detalles Técnicos:
+
+Se utiliza fetch() para realizar peticiones HTTP:
+- GET para obtener estudiantes.
+- POST para registrar uno nuevo.
+- PUT para actualizar datos.
+- DELETE para eliminar por ID.
+
+- Las carreras se gestionan mediante un arreglo auxiliar (carreras) que enlaza carreraId con el nombre mostrado.
+- Al editar desde la tabla, los span se reemplazan por input y select, y se muestran botones de "Guardar" y "Cancelar".
+- Las fechas de nacimiento se formatean en estilo DD/MM/AAAA con toLocaleDateString.
+-Incluye manejo de errores con alertas y mensajes personalizados para mejorar la experiencia del usuario.
+---
 ## 🎨 Estilos (styles.css)
 Define el diseño visual de la interfaz del sistema web de gestion academico. Presenta una apariencia moderna y oscura, con detalles en colores brillantes para destacar elementos claves.
 
