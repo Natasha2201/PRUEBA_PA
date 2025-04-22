@@ -246,6 +246,37 @@ fetch(`https://localhost:7198/api/Nombre_Formulario1/Nombre_Formulario2/${Id_For
 
 📌 NOTA:  Asegúrate de que el campo item.nombre y item.id coincidan con la estructura real del JSON que devuelve tu API.
 
+---
+
+## Estilos (styles.css)
+Define el diseño visual de la interfaz del sistema web de gestion academico. Presenta una apariencia moderna y oscura, con detalles en colores brillantes para destacar elementos claves.
+
+### Diseño General
+Fondo con **degradado lineal** en tonos oscuros (`#0f2027`, `#203a43`, `#2c5364`) para dar una estética profesional.
+- Tipografía sencilla (`sans-serif`) y colores blancos para buen contraste y legibilidad.
+- Distribución de componentes en **diseño horizontal** mediante `flex`, alineando `sidebar` y `main-content`.
+
+### Sidebar (Barra lateral)
+- Fondo sólido en color `#111827`.
+- Ancho reducido a `130px` para una apariencia compacta.
+- Menú vertical con enlaces destacados en color `#f43f5e`.
+
+### Contenido Principal
+- Fondo `#1e293b`, con secciones como `students-list`, `professors-list` y `courses-list` estilizadas en `#2d3748`.
+- Espaciado cómodo mediante `padding` y esquinas redondeadas (`border-radius: 8px`).
+
+### Tablas
+- Estilo personalizado para encabezados (`th`) y celdas (`td`) con tonos oscuros (`#374151`) y texto blanco.
+- Diseño limpio con `border-collapse` y buen espaciado interno (`padding: 10px`).
+
+### Botones
+- Estilos diferenciados para cada tipo de acción:
+  - `edit-btn`: color rosa (`#f43f5e`).
+  - `delete-btn`: color rojo (`#ef4444`).
+  - `new-btn`: color verde (`#10b981`), con texto en blanco y fuente en **negrita**.
+
+📄 Este archivo CSS permite que la aplicación tenga una apariencia moderna, profesional y visualmente atractiva.
+
 
 
 
