@@ -277,23 +277,26 @@ Nos permite listar, editar, eliminar y filtrar estudiantes desde una interfaz we
   - Fecha de nacimiento
   - Email, dirección y teléfono
   - Carrera asociada
+    
 - ✏️ Editar estudiantes, ya sea desde la tabla (modo en línea) o cargando los datos en el formulario para modificarlos.
 - ❌ Eliminar estudiantes con confirmación.
 - 🔍 Filtrar estudiantes por carrera usando un selector desplegable
 - 🔄 Actualización automática de la tabla tras cada operación.
+- 📥 Cargar carreras desde el backend para el formulario de registro de estudiantes.
   
 ### 🛠️ Detalles Técnicos:
 
-Se utiliza fetch() para realizar peticiones HTTP:
+- Se utiliza fetch() para realizar peticiones HTTP:
    - GET para obtener estudiantes.
    - POST para registrar uno nuevo.
    - PUT para actualizar datos.
    - DELETE para eliminar por ID.
 
 - Las carreras se gestionan mediante un arreglo auxiliar (carreras) que enlaza carreraId con el nombre mostrado.
+-  La función `cargarCarrerasFormulario()` se encarga de obtener las carreras disponibles y llenar el `<select>` correspondiente en el formulario.
 - Al editar desde la tabla, los span se reemplazan por input y select, y se muestran botones de "Guardar" y "Cancelar".
 - Las fechas de nacimiento se formatean en estilo DD/MM/AAAA con toLocaleDateString.
--Incluye manejo de errores con alertas y mensajes personalizados para mejorar la experiencia del usuario.
+- Incluye manejo de errores con alertas y mensajes personalizados para mejorar la experiencia del usuario.
 
 ## 📋 Módulo de Gestion de Docentes
 
@@ -301,18 +304,18 @@ Nos permite listar, editar, eliminar y filtrar profesores desde una interfaz web
 
 ### Funcionalidades
 
-➕ Registrar profesores mediante un formulario con los siguientes campos:
+- ➕ Registrar profesores mediante un formulario con los siguientes campos:
    - Nombre y apellido
    - Fecha de nacimiento
    - Email, dirección y teléfono
-📋 Listar todos los profesores en una tabla dinámica.
-✏️ Editar profesores en línea desde la tabla, con opción de cancelar o guardar cambios.
-❌ Eliminar profesores con confirmación de seguridad.
-🔄 Actualización automática de la tabla luego de cualquier acción.
+- 📋 Listar todos los profesores en una tabla dinámica.
+- ✏️ Editar profesores en línea desde la tabla, con opción de cancelar o guardar cambios.
+- ❌ Eliminar profesores con confirmación de seguridad.
+- 🔄 Actualización automática de la tabla luego de cualquier acción.
   
 ### 🛠️ Detalles Técnicos:
 
-Se usa fetch() para interactuar con el endpoint /api/profesores mediante:
+- Se usa fetch() para interactuar con el endpoint /api/profesores mediante:
    - GET para obtener la lista.
    - POST para registrar un nuevo profesor.
    - PUT para editar un profesor existente.
@@ -382,6 +385,7 @@ En este espacio nos permite realizar la matrícula de estudiantes en materias es
 5. El sistema consulta el ID exacto de `materiaPorCarrera` y, si existe, registra la matrícula.
 
 ✅ Este módulo asegura una matrícula precisa, dinámica y validada en todo momento.
+
 ---
 ## 🎨 Estilos (styles.css)
 Define el diseño visual de la interfaz del sistema web de gestion academico. Presenta una apariencia moderna y oscura, con detalles en colores brillantes para destacar elementos claves.
