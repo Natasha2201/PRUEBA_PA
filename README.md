@@ -151,14 +151,100 @@ public class NombreDeLaClase {
     public string Apellido { get; set; }  ….
 }
 ```
+---
+## Gestor Web Index
 
+## 🎨Diseño General (HTML Y CSS)
 
+-	El HTML crea la estructura visual: títulos, menús, formularios, tablas, etc.
+-	Usa un menú lateral con íconos (📚, 👨‍🏫, etc.) que permite cambiar entre secciones
+  
+## 💡Lógica con JavaScript
+Este es el núcleo del sistema y se encarga de:
 
+### 🧑‍💻 Cambiar entre secciones del sistema
 
+Funciones como showStudents(), showProfessors() ocultan todas las secciones y muestran solo la que corresponde.  Esta acción se realiza para cada campo que conforma toda esta gestión. 
 
+### Plantilla:
+```sql
+function show_NombreAtributo() {
+  hideAllSections();
+  document.getElementById("Nombre_de_lista-list").style.display = "block";
+  fetchNombreAtributo();  Llamada genérica que deberías reemplazar por la función correspondiente
+}
+```
+## Conexion con API
+Se realiza la conexión con una página web con una API REST para recibir datos desde el servidor y usarlos en el navegador. 
+Ejemplos como este conectan con la API REST (https://localhost:7198/api/...) para obtener o enviar información. 
 
+### Plantilla:
+```sql
+fetch("https://localhost:7198/api/.....")
+  .then(response => response.json())
+  .then(data => {
+    // mostrar los datos en la tabla
+  });
+```
+## Manejo de formularios
+Este código se encarga de gestionar el envío de un formulario en una página web sin recargar la página. En la cual al revisar el formulario nos ayuda a prevenir el comportamiento por defecto del navegador, además de capturar los datos ingresados por el usuario en las cuales se envían los datos al servidor utilizando fetch() con una solicitud HTTP POST al endpoint de una API para después de que los datos se envíen correctamente con la función fetch_Nombre_De_Objeto para la actualización de la lista a mostrar en pantalla. 
+Cada sección tiene un formulario. 
+Por ejemplo:
+```sql
+<form id="studentForm">
+  <input type="text" id="nombre" required>
+  <input type="text" id="apellido" required>
+  <button type="submit">Guardar</button>
+</form>
 
+------ Y su lógica asociada es:
 
+document.getElementById("studentForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  const data = {
+    nombre: document.getElementById("nombre").value,
+    apellido: document.getElementById("apellido").value
+  };
+
+  fetch("https://localhost:7198/api/estudiantes", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  }).then(() => {
+    fetchStudents(); // recarga la lista
+    this.reset(); // limpia el formulario
+  });
+});
+```
+## Gestión Dinámica de Estudiantes, Materias y Profesores
+Forma parte del sistema de gestión académica y permite cargar dinámicamente información en formularios según selecciones previas del usuario.
+
+### Plantilla:
+```sql
+function cargar_NombreFormulario(Id_Formulario2) {
+fetch(`https://localhost:7198/api/Nombre_Formulario1/Nombre_Formulario2/${Id_Formulario2}`)
+    .then(response => response.json())
+    .then(Nombre_Formulario1 => {
+      const selectElement = document.getElementById("Nombre_Formulario1");
+      selectElement.innerHTML = "<option value=''>-- Selecciona una opción --</option>";
+
+      Nombre_Formulario1.forEach(item => {
+        const option = document.createElement("option");
+        option.value = item.id;
+        option.textContent = item.nombre;
+        selectElement.appendChild(option);
+      });
+    })
+    .catch(error => console.log("Error al obtener Nombre_Formulario1:", error));
+}
+```
+### Reemplazar:
+- NombreFormulario por el nombre de tu función.
+- Nombre_Formulario1 por el nombre de la entidad que se va a llenar (por ejemplo, estudiante, materia...).
+- Nombre_Formulario2 por el filtro usado (como carrera, semestre...).
+- Id_Formulario2 por el ID que usarás como parámetro.
+
+📌 NOTA:  Asegúrate de que el campo item.nombre y item.id coincidan con la estructura real del JSON que devuelve tu API.
 
 
 
