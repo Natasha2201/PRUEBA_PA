@@ -174,7 +174,7 @@ function show_NombreAtributo() {
   fetchNombreAtributo();  Llamada genérica que deberías reemplazar por la función correspondiente
 }
 ```
-## Conexion con API
+## 🧷 Conexion con API
 Se realiza la conexión con una página web con una API REST para recibir datos desde el servidor y usarlos en el navegador. 
 Ejemplos como este conectan con la API REST (https://localhost:7198/api/...) para obtener o enviar información. 
 
@@ -186,7 +186,7 @@ fetch("https://localhost:7198/api/.....")
     // mostrar los datos en la tabla
   });
 ```
-## Manejo de formularios
+## 🔍 Manejo de formularios
 Este código se encarga de gestionar el envío de un formulario en una página web sin recargar la página. En la cual al revisar el formulario nos ayuda a prevenir el comportamiento por defecto del navegador, además de capturar los datos ingresados por el usuario en las cuales se envían los datos al servidor utilizando fetch() con una solicitud HTTP POST al endpoint de una API para después de que los datos se envíen correctamente con la función fetch_Nombre_De_Objeto para la actualización de la lista a mostrar en pantalla. 
 Cada sección tiene un formulario. 
 Por ejemplo:
@@ -216,7 +216,7 @@ document.getElementById("studentForm").addEventListener("submit", function (even
   });
 });
 ```
-## Gestión Dinámica de Estudiantes, Materias y Profesores
+## 🚀 Gestión Dinámica de Estudiantes, Materias y Profesores
 Forma parte del sistema de gestión académica y permite cargar dinámicamente información en formularios según selecciones previas del usuario.
 
 ### Plantilla:
@@ -248,28 +248,28 @@ fetch(`https://localhost:7198/api/Nombre_Formulario1/Nombre_Formulario2/${Id_For
 
 ---
 
-## Estilos (styles.css)
+## 🎨 Estilos (styles.css)
 Define el diseño visual de la interfaz del sistema web de gestion academico. Presenta una apariencia moderna y oscura, con detalles en colores brillantes para destacar elementos claves.
 
-### Diseño General
+### 🖌️ Diseño General
 Fondo con **degradado lineal** en tonos oscuros (`#0f2027`, `#203a43`, `#2c5364`) para dar una estética profesional.
 - Tipografía sencilla (`sans-serif`) y colores blancos para buen contraste y legibilidad.
 - Distribución de componentes en **diseño horizontal** mediante `flex`, alineando `sidebar` y `main-content`.
 
-### Sidebar (Barra lateral)
+### 🧑‍🎨 Sidebar (Barra lateral)
 - Fondo sólido en color `#111827`.
 - Ancho reducido a `130px` para una apariencia compacta.
 - Menú vertical con enlaces destacados en color `#f43f5e`.
 
-### Contenido Principal
+### 🖌️ Contenido Principal
 - Fondo `#1e293b`, con secciones como `students-list`, `professors-list` y `courses-list` estilizadas en `#2d3748`.
 - Espaciado cómodo mediante `padding` y esquinas redondeadas (`border-radius: 8px`).
 
-### Tablas
+### 🧱 Tablas
 - Estilo personalizado para encabezados (`th`) y celdas (`td`) con tonos oscuros (`#374151`) y texto blanco.
 - Diseño limpio con `border-collapse` y buen espaciado interno (`padding: 10px`).
 
-### Botones
+### 🔲Botones
 - Estilos diferenciados para cada tipo de acción:
   - `edit-btn`: color rosa (`#f43f5e`).
   - `delete-btn`: color rojo (`#ef4444`).
